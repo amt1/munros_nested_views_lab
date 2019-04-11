@@ -1,5 +1,4 @@
 const PubSub = require('../helpers/pub_sub.js');
-const Request = require('../helpers/request_helper.js');
 const MunroView = require('./munro_view.js');
 const Munros = require('../models/munros.js');
 
