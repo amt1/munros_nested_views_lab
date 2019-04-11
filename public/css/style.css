@@ -2,6 +2,8 @@ body {
   background-image: url('../photos/munro-photo.jpg');
 opacity: 0.8;
 font-family: 'Heebo', sans-serif;
+background-repeat: repeat-y;
+background-size: 100%;
 
 }
 main {
