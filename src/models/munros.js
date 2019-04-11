@@ -15,4 +15,19 @@ Munros.prototype.getData = function () {
     });
 };
 
+Munros.prototype.bindEvents = function() {
+  PubSub.subscribe('SelectView:region-selected', (event) => {
+    const regionIndex = event.detail;
+    const regionMunros = this.findRegion(regionIndex);
+  });
+};
+
+Munros.prototype.findRegion = function (index){
+  const filteredData = this.data.filter((munro)=> {
+    // const result = words.filter(word => word.length > 6);
+
+  })
+};
+
+
 module.exports = Munros;

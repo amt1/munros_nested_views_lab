@@ -11,6 +11,11 @@ SelectView.prototype.bindEvents = function () {
     console.log(munroFilteredRegionsData);
     this.populate(munroFilteredRegionsData);
   });
+  this.container.addEventListener('change',(event) =>{
+    const selectedIndex = event.target.value;
+    const testThis = event.target.text;
+    PubSub.publish('SelectView:region-selected', testThis);
+  });
 };
 
 SelectView.prototype.filterData = function (allData) {
