@@ -1,3 +1,19 @@
+body {
+  background-image: url('../photos/munro-photo.jpg');
+opacity: 0.8;
+font-family: 'Heebo', sans-serif;
+
+}
+main {
+  /* opacity: 1;
+  z-index: 2; */
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
 li.munro {
   background-color: lightskyblue;
   border: 1px solid black;
@@ -5,6 +21,7 @@ li.munro {
   width: 350px;
   display: inline-block;
   margin: 1.5em;
+  border-radius: 5px;
 }
 
 h3 {
