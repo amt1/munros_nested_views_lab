@@ -9,20 +9,28 @@ const MunroView = function (container, munro){
 
 MunroView.prototype.render = function (){
   const munroListItem = document.createElement('li');
-  const munroHeading = document.createElement('h3');
-  munroHeading.textContent=this.munro.name;
   munroListItem.classList.add('munro');
+
+  const munroHeading = this.createElement('h3', this.munro.name);
   munroListItem.appendChild(munroHeading);
+
   const munroDetails = document.createElement('ul');
-  const munroMeaningLI = document.createElement('li');
-  munroMeaningLI.textContent = this.munro.meaning;
-  const munroHeightLI = document.createElement('li');
-  munroHeightLI.textContent = this.munro.height;
+
+  const munroMeaningLI = this.createElement('li', this.munro.meaning);
+  const munroHeightLI = this.createElement('li', this.munro.height);
+    
   munroDetails.appendChild(munroMeaningLI);
   munroDetails.appendChild(munroHeightLI);
   munroListItem.appendChild(munroDetails);
   this.munroContainer.appendChild(munroListItem);
 };
 
+// helper functions
+
+MunroView.prototype.createElement = function(type, text) {
+  const element = document.createElement(type);
+  element.textContent = text;
+  return element;
+};
 
 module.exports = MunroView;
