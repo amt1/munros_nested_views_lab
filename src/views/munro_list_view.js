@@ -1,5 +1,7 @@
 const PubSub = require('../helpers/pub_sub.js');
 const Request = require('../helpers/request_helper.js');
+const MunroView = require('./munro_view.js');
+const Munros = require('../models/munros.js');
 
 const MunroListView = function(container){
   this.container = container;
@@ -13,7 +15,13 @@ MunroListView.prototype.bindEvents = function () {
 };
 
 MunroListView.prototype.render = function () {
-    console.log(this.munroList);
+  const munroListUL = document.createElement('ul');
+  munroListUL.id="list-munros-here";
+  this.container.appendChild(munroListUL);
+    this.munroList.forEach((munro)=>{
+    const munroView = new MunroView(munroListUL,munro);
+    munroView.render();
+  });
 };
 
 

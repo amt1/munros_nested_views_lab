@@ -1,0 +1,13 @@
+li.munro {
+  background-color: lightskyblue;
+  border: 1px solid black;
+  padding: 2em;
+  width: 350px;
+  display: inline-block;
+  margin: 1.5em;
+}
+
+h3 {
+  padding-top: 0;
+  margin-top: 0;
+}
