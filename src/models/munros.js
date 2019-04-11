@@ -11,7 +11,7 @@ Munros.prototype.getData = function () {
   request.get()
     .then( (munrosData)=>{
       this.data = munrosData;
-      console.log(this.data);
+      PubSub.publish('Munros:munros-data-ready', this.data);
     });
 };
 

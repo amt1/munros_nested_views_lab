@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const munros = new Munros();
   munros.getData();
 
+  const munroListContainer = document.querySelector('section#munro-list');
+
+  const munroListView = new MunroListView(munroListContainer);
+  munroListView.bindEvents();
+
 
 
 
