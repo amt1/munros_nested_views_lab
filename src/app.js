@@ -7,20 +7,18 @@ const SelectView = require('./views/select_view.js');
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
 
-  const munros = new Munros();
-  munros.getData();
-
   const munroSelectContainer = document.querySelector('select#select-munro');
+  const munroListContainer = document.querySelector('section#munro-list');
 
   const selectView = new SelectView(munroSelectContainer);
   selectView.bindEvents();
 
-
-  const munroListContainer = document.querySelector('section#munro-list');
-
   const munroListView = new MunroListView(munroListContainer);
   munroListView.bindEvents();
 
+    const munros = new Munros();
+    munros.getData();
+    munros.bindEvents();
 
 
 

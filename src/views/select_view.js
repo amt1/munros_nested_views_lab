@@ -2,18 +2,18 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const SelectView = function(container) {
   this.container = container;
+  this.munroFilteredRegionsData = [];
 };
 
 SelectView.prototype.bindEvents = function () {
   PubSub.subscribe('Munros:munros-data-ready', (event) => {
     const munroData = event.detail;
-    const munroFilteredRegionsData = this.filterData(munroData);
-    console.log(munroFilteredRegionsData);
-    this.populate(munroFilteredRegionsData);
+    this.munroFilteredRegionsData = this.filterData(munroData);
+    this.populate(this.munroFilteredRegionsData);
   });
   this.container.addEventListener('change',(event) =>{
     const selectedIndex = event.target.value;
-    const testThis = event.target.text;
+    const testThis = this.munroFilteredRegionsData[selectedIndex];
     PubSub.publish('SelectView:region-selected', testThis);
   });
 };

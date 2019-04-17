@@ -9,6 +9,9 @@ background-size: 100%;
 main {
   /* opacity: 1;
   z-index: 2; */
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 h1 {
@@ -16,14 +19,29 @@ h1 {
   font-size: 3em;
 }
 
+#munro-list {
+  display: inline-block;
+  justify-content: center;
+  text-align: left;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 95%;
+  margin: auto;
+}
 li.munro {
   background-color: lightskyblue;
   border: 1px solid black;
   padding: 2em;
-  width: 350px;
+  width: 300px;
   display: inline-block;
   margin: 1.5em;
   border-radius: 5px;
+  list-style: none;
+}
+
+li.munro li {
+  list-style: disc outside;
 }
 
 h3 {

@@ -13,10 +13,9 @@ MunroView.prototype.render = function (){
   munroListItem.appendChild(munroHeading);
 
   const munroDetails = document.createElement('ul');
-
-  const munroMeaningLI = this.createElement('li', this.munro.meaning);
-  const munroHeightLI = this.createElement('li', this.munro.height);
-  const munroRegionLI = this.createElement('li', this.munro.region);
+  const munroMeaningLI = this.createElement('li','Meaning: ' + this.munro.meaning);
+  const munroHeightLI = this.createElement('li', 'Height: ' + this.munro.height);
+  const munroRegionLI = this.createElement('li', 'Region: ' + this.munro.region);
   munroDetails.appendChild(munroMeaningLI);
   munroDetails.appendChild(munroHeightLI);
   munroDetails.appendChild(munroRegionLI);

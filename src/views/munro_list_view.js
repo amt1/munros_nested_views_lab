@@ -11,9 +11,11 @@ MunroListView.prototype.bindEvents = function () {
     this.munroList = event.detail;
     this.render();
   });
+
 };
 
 MunroListView.prototype.render = function () {
+  this.container.innerHTML = '';
   const munroListUL = document.createElement('ul');
   munroListUL.id="list-munros-here";
   this.container.appendChild(munroListUL);

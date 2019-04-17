@@ -11,22 +11,25 @@ Munros.prototype.getData = function () {
   request.get()
     .then( (munrosData)=>{
       this.data = munrosData;
+      console.log(this.data);
       PubSub.publish('Munros:munros-data-ready', this.data);
     });
 };
 
 Munros.prototype.bindEvents = function() {
   PubSub.subscribe('SelectView:region-selected', (event) => {
-    const regionIndex = event.detail;
-    const regionMunros = this.findRegion(regionIndex);
+    const region =  event.detail;
+    console.log('region: ', region);
+    this.munroList = this.findByRegion(region);
+    console.log('munro list: ', this.munroList);
+    PubSub.publish('Munros:munros-data-ready', this.munroList);
   });
+
 };
 
-Munros.prototype.findRegion = function (index){
-  const filteredData = this.data.filter((munro)=> {
-    // const result = words.filter(word => word.length > 6);
-
-  })
+Munros.prototype.findByRegion = function (regionSelected){
+//    console.log('filtered data:', this.data.filter(munro => regionSelected == munro.region));
+return this.data.filter(munro => regionSelected == munro.region);
 };
 
 
